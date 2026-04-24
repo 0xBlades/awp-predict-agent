@@ -1,0 +1,1646 @@
+[
+  {
+    "id": null,
+    "token": "BNB",
+    "indicators": {
+      "ema_diff": -0.26233686371767817,
+      "rsi": 94.95392516760957,
+      "vol_ratio": 0.2724121318754975
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-23T14:05:41.778964"
+  },
+  {
+    "id": null,
+    "token": "SOL",
+    "indicators": {
+      "ema_diff": -0.18115471811445616,
+      "rsi": 80.82166633390115,
+      "vol_ratio": 0.30075896786585266
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-23T14:05:57.517901"
+  },
+  {
+    "id": null,
+    "token": "ETH",
+    "indicators": {
+      "ema_diff": -4.8927404287733225,
+      "rsi": 89.90445726062539,
+      "vol_ratio": 0.5763500031838741
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-23T14:06:20.005654"
+  },
+  {
+    "id": null,
+    "token": "BNB",
+    "indicators": {
+      "ema_diff": -0.2808823182632523,
+      "rsi": 94.95392516760957,
+      "vol_ratio": 0.4966059787785665
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-23T14:08:07.455738"
+  },
+  {
+    "id": null,
+    "token": "SOL",
+    "indicators": {
+      "ema_diff": -0.18224562720536142,
+      "rsi": 80.82166633390115,
+      "vol_ratio": 0.4957416583388587
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-23T14:08:34.798173"
+  },
+  {
+    "id": null,
+    "token": "ETH",
+    "indicators": {
+      "ema_diff": -5.14910406513718,
+      "rsi": 89.90445726062538,
+      "vol_ratio": 0.8739849224897376
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-23T14:08:46.766158"
+  },
+  {
+    "id": null,
+    "token": "BNB",
+    "indicators": {
+      "ema_diff": -0.27433686371773547,
+      "rsi": 94.95392516760957,
+      "vol_ratio": 0.5966706935993196
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-23T14:09:28.148445"
+  },
+  {
+    "id": null,
+    "token": "SOL",
+    "indicators": {
+      "ema_diff": -0.18442744538718614,
+      "rsi": 80.82166633390115,
+      "vol_ratio": 0.547148096774695
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-23T14:09:56.141606"
+  },
+  {
+    "id": null,
+    "token": "ETH",
+    "indicators": {
+      "ema_diff": -5.0814677015005145,
+      "rsi": 89.90445726062539,
+      "vol_ratio": 0.9435252654855305
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-23T14:10:12.163301"
+  },
+  {
+    "id": null,
+    "token": "BNB",
+    "indicators": {
+      "ema_diff": -0.025796529130843737,
+      "rsi": 99.88957338598034,
+      "vol_ratio": 0.027262906907187898
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-23T14:30:59.100997"
+  },
+  {
+    "id": null,
+    "token": "SOL",
+    "indicators": {
+      "ema_diff": -0.1134406915339099,
+      "rsi": 99.99999999999999,
+      "vol_ratio": 0.019466964334530094
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-23T14:31:30.724705"
+  },
+  {
+    "id": null,
+    "token": "ETH",
+    "indicators": {
+      "ema_diff": -2.6544001656466207,
+      "rsi": 99.99999999999999,
+      "vol_ratio": 0.07213159958307162
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-23T14:31:40.551104"
+  },
+  {
+    "id": null,
+    "token": "BNB",
+    "indicators": {
+      "ema_diff": -0.09140345743401213,
+      "rsi": 61.40921507060824,
+      "vol_ratio": 0.015380665341196764
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-23T15:15:45.895025"
+  },
+  {
+    "id": null,
+    "token": "SOL",
+    "indicators": {
+      "ema_diff": -0.06437137213940503,
+      "rsi": 89.68452449386365,
+      "vol_ratio": 0.03598885583707026
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-23T15:16:37.555594"
+  },
+  {
+    "id": null,
+    "token": "ETH",
+    "indicators": {
+      "ema_diff": -1.6928909680855213,
+      "rsi": 87.0596972162494,
+      "vol_ratio": 0.2626847240887405
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-23T15:17:26.709784"
+  },
+  {
+    "id": null,
+    "token": "BNB",
+    "indicators": {
+      "ema_diff": -0.06088287289401251,
+      "rsi": 58.332610092451716,
+      "vol_ratio": 0.015396966362720216
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-23T15:45:30.101463"
+  },
+  {
+    "id": null,
+    "token": "SOL",
+    "indicators": {
+      "ema_diff": -0.04419831272625174,
+      "rsi": 84.00652459317219,
+      "vol_ratio": 0.022604801432637066
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-23T15:46:13.128077"
+  },
+  {
+    "id": null,
+    "token": "ETH",
+    "indicators": {
+      "ema_diff": -1.687640966562867,
+      "rsi": 69.50496327399465,
+      "vol_ratio": 0.03451770349344466
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-23T15:47:04.904141"
+  },
+  {
+    "id": null,
+    "token": "BNB",
+    "indicators": {
+      "ema_diff": -0.2617351300386872,
+      "rsi": 12.264387018833284,
+      "vol_ratio": 0.020051908710484498
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-23T16:15:41.037194"
+  },
+  {
+    "id": null,
+    "token": "SOL",
+    "indicators": {
+      "ema_diff": -0.0792570982862344,
+      "rsi": 51.86111802655827,
+      "vol_ratio": 0.05419619577931729
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-23T16:16:00.769603"
+  },
+  {
+    "id": null,
+    "token": "ETH",
+    "indicators": {
+      "ema_diff": -3.3307394861121793,
+      "rsi": 12.126928197609699,
+      "vol_ratio": 0.16856514085450625
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-23T16:16:18.903084"
+  },
+  {
+    "id": null,
+    "token": "BNB",
+    "indicators": {
+      "ema_diff": -0.6177413451177927,
+      "rsi": 3.552612879743881,
+      "vol_ratio": 0.00952846712779339
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-23T16:46:01.706199"
+  },
+  {
+    "id": null,
+    "token": "SOL",
+    "indicators": {
+      "ema_diff": -0.13849772124432036,
+      "rsi": 20.847986410152288,
+      "vol_ratio": 0.04239778866844943
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-23T16:46:17.629920"
+  },
+  {
+    "id": null,
+    "token": "ETH",
+    "indicators": {
+      "ema_diff": -5.074807446870182,
+      "rsi": 1.9401095061164126,
+      "vol_ratio": 0.052228168996947995
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-23T16:46:39.191379"
+  },
+  {
+    "id": null,
+    "token": "BNB",
+    "indicators": {
+      "ema_diff": -0.4983346706604834,
+      "rsi": 31.88430340517236,
+      "vol_ratio": 0.03293971831254941
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-23T17:00:34.042632"
+  },
+  {
+    "id": null,
+    "token": "SOL",
+    "indicators": {
+      "ema_diff": -0.1352268299674506,
+      "rsi": 23.245109394562377,
+      "vol_ratio": 0.010772287118241523
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-23T17:00:53.037591"
+  },
+  {
+    "id": null,
+    "token": "ETH",
+    "indicators": {
+      "ema_diff": -4.776285089587418,
+      "rsi": 21.433098323429768,
+      "vol_ratio": 0.06649965616788515
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-23T17:01:39.110110"
+  },
+  {
+    "id": null,
+    "token": "BNB",
+    "indicators": {
+      "ema_diff": -0.8302494211557132,
+      "rsi": 20.67424743252347,
+      "vol_ratio": 0.02203883828693697
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-23T17:16:17.384959"
+  },
+  {
+    "id": null,
+    "token": "SOL",
+    "indicators": {
+      "ema_diff": -0.17759827584002608,
+      "rsi": 16.09337419738343,
+      "vol_ratio": 0.05614081873156311
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-23T17:16:29.849130"
+  },
+  {
+    "id": null,
+    "token": "ETH",
+    "indicators": {
+      "ema_diff": -7.817052681682071,
+      "rsi": 12.225623088919932,
+      "vol_ratio": 0.10565422327512085
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-23T17:16:56.467657"
+  },
+  {
+    "id": null,
+    "token": "BNB",
+    "indicators": {
+      "ema_diff": -0.8598844544542317,
+      "rsi": 13.540731923323815,
+      "vol_ratio": 0.02244979375319395
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-23T17:30:55.262758"
+  },
+  {
+    "id": null,
+    "token": "SOL",
+    "indicators": {
+      "ema_diff": -0.1652974424082032,
+      "rsi": 24.02618890433,
+      "vol_ratio": 0.02650375058635314
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-23T17:31:20.958045"
+  },
+  {
+    "id": null,
+    "token": "ETH",
+    "indicators": {
+      "ema_diff": -8.693000110914454,
+      "rsi": 0.9835801962482387,
+      "vol_ratio": 0.06354577743605781
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-23T17:31:42.564400"
+  },
+  {
+    "id": null,
+    "token": "BNB",
+    "indicators": {
+      "ema_diff": -0.8773389999088295,
+      "rsi": 12.275079221846871,
+      "vol_ratio": 0.4846940199155413
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-23T17:39:06.928042"
+  },
+  {
+    "id": null,
+    "token": "SOL",
+    "indicators": {
+      "ema_diff": -0.16747926059002793,
+      "rsi": 22.61850819553988,
+      "vol_ratio": 0.2588161166805827
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-23T17:39:09.325916"
+  },
+  {
+    "id": null,
+    "token": "ETH",
+    "indicators": {
+      "ema_diff": -8.709363747278076,
+      "rsi": 0.6904158505849822,
+      "vol_ratio": 0.4516214695279007
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-23T17:39:42.753492"
+  },
+  {
+    "id": null,
+    "token": "BTC",
+    "indicators": {
+      "ema_diff": -112.36682747329178,
+      "rsi": 22.50728999488943,
+      "vol_ratio": 0.0022184474927887028
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-23T17:45:28.758445"
+  },
+  {
+    "id": null,
+    "token": "ETH",
+    "indicators": {
+      "ema_diff": -10.192061745553929,
+      "rsi": 6.80655515360326,
+      "vol_ratio": 0.01827566387415821
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-23T18:00:23.310879"
+  },
+  {
+    "id": null,
+    "token": "BNB",
+    "indicators": {
+      "ema_diff": -1.094430857283328,
+      "rsi": 4.840081907239185,
+      "vol_ratio": 0.007996253197260068
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-23T18:00:25.238331"
+  },
+  {
+    "id": null,
+    "token": "SOL",
+    "indicators": {
+      "ema_diff": -0.17301242867763733,
+      "rsi": 30.468106361588024,
+      "vol_ratio": 0.01948066384728949
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-23T18:00:31.265099"
+  },
+  {
+    "id": null,
+    "token": "BNB",
+    "indicators": {
+      "ema_diff": -1.4668411057750745,
+      "rsi": 7.852614768761041,
+      "vol_ratio": 0.027745431558738425
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-23T18:30:53.853207"
+  },
+  {
+    "id": null,
+    "token": "SOL",
+    "indicators": {
+      "ema_diff": -0.20691787486282465,
+      "rsi": 23.501373613418505,
+      "vol_ratio": 0.0377421807710543
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-23T18:30:55.777788"
+  },
+  {
+    "id": null,
+    "token": "ETH",
+    "indicators": {
+      "ema_diff": -11.393126791978375,
+      "rsi": 19.508093755331046,
+      "vol_ratio": 0.02303004373718473
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-23T18:30:55.810102"
+  },
+  {
+    "id": null,
+    "token": "ETH",
+    "indicators": {
+      "ema_diff": -11.436763155614699,
+      "rsi": 18.98044228952503,
+      "vol_ratio": 0.5169528053435489
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-23T18:39:23.746367"
+  },
+  {
+    "id": null,
+    "token": "SOL",
+    "indicators": {
+      "ema_diff": -0.19928151122645943,
+      "rsi": 28.768022396875665,
+      "vol_ratio": 0.29788643930872194
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-23T18:39:24.158199"
+  },
+  {
+    "id": null,
+    "token": "BNB",
+    "indicators": {
+      "ema_diff": -1.4352047421386942,
+      "rsi": 10.71846788798557,
+      "vol_ratio": 0.40855190582293993
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-23T18:39:30.509418"
+  },
+  {
+    "id": null,
+    "token": "BTC",
+    "indicators": {
+      "ema_diff": -47.81910277051793,
+      "rsi": 88.21710023589283,
+      "vol_ratio": 0.5723841147987528
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-23T20:46:49.917668"
+  },
+  {
+    "id": null,
+    "token": "ETH",
+    "indicators": {
+      "ema_diff": -0.532468137619162,
+      "rsi": 96.62899322717217,
+      "vol_ratio": 0.0539532374890096
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-23T22:46:54.595530"
+  },
+  {
+    "id": null,
+    "token": "SOL",
+    "indicators": {
+      "ema_diff": 0.11521566182830156,
+      "rsi": 67.9998316132515,
+      "vol_ratio": 0.6779502688941407
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T07:13:55.362023"
+  },
+  {
+    "id": null,
+    "token": "SOL",
+    "indicators": {
+      "ema_diff": 0.0849379699463384,
+      "rsi": 35.85444814647179,
+      "vol_ratio": 0.019721075858317567
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T07:16:17.955975"
+  },
+  {
+    "id": null,
+    "token": "ETH",
+    "indicators": {
+      "ema_diff": 2.8724801785742784,
+      "rsi": 34.46232248520954,
+      "vol_ratio": 0.010958626640819686
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T07:31:30.676900"
+  },
+  {
+    "id": null,
+    "token": "BNB",
+    "indicators": {
+      "ema_diff": 0.5725441554694726,
+      "rsi": 40.58648077028737,
+      "vol_ratio": 0.018811865711304013
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T07:46:26.726279"
+  },
+  {
+    "id": null,
+    "token": "ETH",
+    "indicators": {
+      "ema_diff": 3.209443844748421,
+      "rsi": 43.42287976166111,
+      "vol_ratio": 0.0386443745084219
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T07:46:27.980655"
+  },
+  {
+    "id": null,
+    "token": "BNB",
+    "indicators": {
+      "ema_diff": 0.058551837168351994,
+      "rsi": 7.362000359024385,
+      "vol_ratio": 0.05718766218393297
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T10:31:18.814930"
+  },
+  {
+    "id": null,
+    "token": "BTC",
+    "indicators": {
+      "ema_diff": 69.10487433252274,
+      "rsi": 53.781700423898656,
+      "vol_ratio": 0.11258005515114959
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T10:31:32.796398"
+  },
+  {
+    "id": null,
+    "token": "ETH",
+    "indicators": {
+      "ema_diff": 0.43158012159392456,
+      "rsi": 42.960287453409265,
+      "vol_ratio": 0.12250114496158042
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T10:31:50.119281"
+  },
+  {
+    "id": null,
+    "token": "BNB",
+    "indicators": {
+      "ema_diff": 0.1064945878204071,
+      "rsi": 16.246723485264514,
+      "vol_ratio": 0.02885071785713776
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T10:46:07.472937"
+  },
+  {
+    "id": null,
+    "token": "SOL",
+    "indicators": {
+      "ema_diff": 0.07045758767310417,
+      "rsi": 30.20864873692233,
+      "vol_ratio": 0.01973161422725537
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T10:46:22.199014"
+  },
+  {
+    "id": null,
+    "token": "ETH",
+    "indicators": {
+      "ema_diff": 0.797961824255708,
+      "rsi": 48.954005125691374,
+      "vol_ratio": 0.08671676195278663
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T10:46:39.481575"
+  },
+  {
+    "id": null,
+    "token": "BNB",
+    "indicators": {
+      "ema_diff": -0.19845231301655986,
+      "rsi": 7.92575729227467,
+      "vol_ratio": 0.05876988824409544
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T11:01:09.563791"
+  },
+  {
+    "id": null,
+    "token": "SOL",
+    "indicators": {
+      "ema_diff": 0.029186399703021948,
+      "rsi": 13.395943076052529,
+      "vol_ratio": 0.03631327643599211
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T11:01:25.935097"
+  },
+  {
+    "id": null,
+    "token": "ETH",
+    "indicators": {
+      "ema_diff": -0.944156302364263,
+      "rsi": 19.946873126919723,
+      "vol_ratio": 0.07426025162164505
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T11:01:46.047333"
+  },
+  {
+    "id": null,
+    "token": "BNB",
+    "indicators": {
+      "ema_diff": -0.4001020502745405,
+      "rsi": 0.0,
+      "vol_ratio": 0.09999669173584205
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T11:16:30.141257"
+  },
+  {
+    "id": null,
+    "token": "SOL",
+    "indicators": {
+      "ema_diff": 0.006096268789747228,
+      "rsi": 0.0,
+      "vol_ratio": 0.05013760689340566
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T11:16:44.963600"
+  },
+  {
+    "id": null,
+    "token": "ETH",
+    "indicators": {
+      "ema_diff": -1.6949615335388444,
+      "rsi": 0.0,
+      "vol_ratio": 0.14990075458554214
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T11:17:05.746266"
+  },
+  {
+    "id": null,
+    "token": "BNB",
+    "indicators": {
+      "ema_diff": -0.7835159474403781,
+      "rsi": 0.0,
+      "vol_ratio": 0.09879857250396092
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T11:31:33.188783"
+  },
+  {
+    "id": null,
+    "token": "SOL",
+    "indicators": {
+      "ema_diff": -0.04080425638274221,
+      "rsi": 0.0,
+      "vol_ratio": 0.07409572510116065
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T11:31:51.186826"
+  },
+  {
+    "id": null,
+    "token": "ETH",
+    "indicators": {
+      "ema_diff": -3.956854506655418,
+      "rsi": 0.0,
+      "vol_ratio": 0.6362205657329155
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T11:33:06.880444"
+  },
+  {
+    "id": null,
+    "token": "BTC",
+    "indicators": {
+      "ema_diff": -104.70826265768846,
+      "rsi": 0.4825786412909832,
+      "vol_ratio": 0.016554948195501094
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T11:46:21.623041"
+  },
+  {
+    "id": null,
+    "token": "BNB",
+    "indicators": {
+      "ema_diff": -0.9990791082856276,
+      "rsi": 0.7372877457600884,
+      "vol_ratio": 0.07250829624359457
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T11:46:52.799367"
+  },
+  {
+    "id": null,
+    "token": "SOL",
+    "indicators": {
+      "ema_diff": -0.08341408822776941,
+      "rsi": 3.1457412684444845,
+      "vol_ratio": 0.15907436028276833
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T11:47:06.353805"
+  },
+  {
+    "id": null,
+    "token": "BNB",
+    "indicators": {
+      "ema_diff": -1.068493713339194,
+      "rsi": 5.48290065824414,
+      "vol_ratio": 0.24087229412438438
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T12:01:20.472417"
+  },
+  {
+    "id": null,
+    "token": "SOL",
+    "indicators": {
+      "ema_diff": -0.08409185357193394,
+      "rsi": 16.415738491968373,
+      "vol_ratio": 0.04061008292952369
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T12:01:33.735352"
+  },
+  {
+    "id": null,
+    "token": "ETH",
+    "indicators": {
+      "ema_diff": -5.410741036329,
+      "rsi": 9.858644248561466,
+      "vol_ratio": 0.0446805028713342
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T12:02:12.917601"
+  },
+  {
+    "id": null,
+    "token": "BNB",
+    "indicators": {
+      "ema_diff": -1.2253368446534978,
+      "rsi": 3.7814654294196157,
+      "vol_ratio": 0.12175218181195184
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T12:16:12.896402"
+  },
+  {
+    "id": null,
+    "token": "SOL",
+    "indicators": {
+      "ema_diff": -0.10037780084790882,
+      "rsi": 20.895291994967458,
+      "vol_ratio": 0.04691769673238709
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T12:16:24.823940"
+  },
+  {
+    "id": null,
+    "token": "ETH",
+    "indicators": {
+      "ema_diff": -5.439921052754016,
+      "rsi": 18.36239329890968,
+      "vol_ratio": 0.13427664998506933
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T12:16:36.916503"
+  },
+  {
+    "id": null,
+    "token": "BNB",
+    "indicators": {
+      "ema_diff": -1.3926530161980963,
+      "rsi": 2.5407446909950724,
+      "vol_ratio": 0.10437134185611043
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T12:31:07.254906"
+  },
+  {
+    "id": null,
+    "token": "SOL",
+    "indicators": {
+      "ema_diff": -0.12759591745009402,
+      "rsi": 10.632021872772023,
+      "vol_ratio": 0.06787123282608108
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T12:31:27.627581"
+  },
+  {
+    "id": null,
+    "token": "ETH",
+    "indicators": {
+      "ema_diff": -6.058675045648215,
+      "rsi": 14.112966323474518,
+      "vol_ratio": 0.18788101661058965
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T12:31:51.113542"
+  },
+  {
+    "id": null,
+    "token": "BNB",
+    "indicators": {
+      "ema_diff": -1.457566314177484,
+      "rsi": 1.8951676221756775,
+      "vol_ratio": 0.03168456228531202
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T12:46:26.027848"
+  },
+  {
+    "id": null,
+    "token": "ETH",
+    "indicators": {
+      "ema_diff": -6.282757485412731,
+      "rsi": 8.848391878548426,
+      "vol_ratio": 0.06650447560123444
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T12:47:03.767819"
+  },
+  {
+    "id": null,
+    "token": "BTC",
+    "indicators": {
+      "ema_diff": -150.48189422026917,
+      "rsi": 7.3051663024614335,
+      "vol_ratio": 0.09653838809446723
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T12:47:36.229916"
+  },
+  {
+    "id": null,
+    "token": "SOL",
+    "indicators": {
+      "ema_diff": -0.18278095654115134,
+      "rsi": 0.0,
+      "vol_ratio": 0.03022405971896326
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T13:02:05.422623"
+  },
+  {
+    "id": null,
+    "token": "ETH",
+    "indicators": {
+      "ema_diff": -6.218544334486978,
+      "rsi": 11.17628666083454,
+      "vol_ratio": 0.10358103479224062
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T13:02:25.560673"
+  },
+  {
+    "id": null,
+    "token": "BTC",
+    "indicators": {
+      "ema_diff": -150.6914365387056,
+      "rsi": 10.168753102584173,
+      "vol_ratio": 0.05785852538572097
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T13:02:59.607991"
+  },
+  {
+    "id": null,
+    "token": "BNB",
+    "indicators": {
+      "ema_diff": -1.4831641793292647,
+      "rsi": 11.545906250041526,
+      "vol_ratio": 0.04243540976101274
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T13:16:38.417979"
+  },
+  {
+    "id": null,
+    "token": "SOL",
+    "indicators": {
+      "ema_diff": -0.17924316119999162,
+      "rsi": 4.437002939592466,
+      "vol_ratio": 0.1375865349361778
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T13:16:56.525662"
+  },
+  {
+    "id": null,
+    "token": "ETH",
+    "indicators": {
+      "ema_diff": -6.544767143245281,
+      "rsi": 7.81542991794122,
+      "vol_ratio": 0.08592576337315234
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T13:17:28.505457"
+  },
+  {
+    "id": null,
+    "token": "BNB",
+    "indicators": {
+      "ema_diff": -1.5156571186078054,
+      "rsi": 9.230277979222267,
+      "vol_ratio": 0.3151416911212232
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T13:31:26.834825"
+  },
+  {
+    "id": null,
+    "token": "SOL",
+    "indicators": {
+      "ema_diff": -0.17485949334717077,
+      "rsi": 9.223521576537818,
+      "vol_ratio": 0.08716837822445078
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T13:31:52.754524"
+  },
+  {
+    "id": null,
+    "token": "ETH",
+    "indicators": {
+      "ema_diff": -5.81120306509365,
+      "rsi": 20.039020805923798,
+      "vol_ratio": 0.15384410925092049
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T13:32:17.259224"
+  },
+  {
+    "id": null,
+    "token": "BNB",
+    "indicators": {
+      "ema_diff": -1.4086555641742962,
+      "rsi": 21.10787685236789,
+      "vol_ratio": 0.08006519983348948
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T13:46:19.649116"
+  },
+  {
+    "id": null,
+    "token": "SOL",
+    "indicators": {
+      "ema_diff": -0.15431674756490565,
+      "rsi": 23.917173260477934,
+      "vol_ratio": 0.16679525614329543
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T13:46:39.723357"
+  },
+  {
+    "id": null,
+    "token": "ETH",
+    "indicators": {
+      "ema_diff": -4.982444382246285,
+      "rsi": 39.08464695711586,
+      "vol_ratio": 0.1191871102549911
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T13:46:56.502069"
+  },
+  {
+    "id": null,
+    "token": "BNB",
+    "indicators": {
+      "ema_diff": -1.1495719237818776,
+      "rsi": 61.861558809517206,
+      "vol_ratio": 0.120571668736553
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T14:01:07.820100"
+  },
+  {
+    "id": null,
+    "token": "SOL",
+    "indicators": {
+      "ema_diff": -0.10715290697932289,
+      "rsi": 64.43555646870051,
+      "vol_ratio": 0.04153686161948165
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T14:01:25.520295"
+  },
+  {
+    "id": null,
+    "token": "ETH",
+    "indicators": {
+      "ema_diff": -3.60635777549669,
+      "rsi": 73.35782107605829,
+      "vol_ratio": 0.18886877899275814
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T14:01:47.685497"
+  },
+  {
+    "id": null,
+    "token": "BNB",
+    "indicators": {
+      "ema_diff": -0.8279355305112404,
+      "rsi": 90.39421936777067,
+      "vol_ratio": 0.2317133462844078
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T14:31:21.194734"
+  },
+  {
+    "id": null,
+    "token": "SOL",
+    "indicators": {
+      "ema_diff": -0.07786923330473883,
+      "rsi": 82.72985258926286,
+      "vol_ratio": 0.1230566203617163
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T14:31:43.407728"
+  },
+  {
+    "id": null,
+    "token": "ETH",
+    "indicators": {
+      "ema_diff": -2.6232276708547033,
+      "rsi": 85.43251612401093,
+      "vol_ratio": 0.18509848659593686
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T14:32:13.824244"
+  },
+  {
+    "id": null,
+    "token": "BNB",
+    "indicators": {
+      "ema_diff": -0.7005432285809547,
+      "rsi": 89.35388648989314,
+      "vol_ratio": 0.020987737956357506
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T14:46:28.419707"
+  },
+  {
+    "id": null,
+    "token": "SOL",
+    "indicators": {
+      "ema_diff": -0.09568095222169859,
+      "rsi": 55.38525789394808,
+      "vol_ratio": 0.09512678877998935
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T14:46:46.966255"
+  },
+  {
+    "id": null,
+    "token": "ETH",
+    "indicators": {
+      "ema_diff": -2.7402337733692548,
+      "rsi": 68.44829726485338,
+      "vol_ratio": 0.06101728526368755
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T14:47:12.956810"
+  },
+  {
+    "id": null,
+    "token": "BNB",
+    "indicators": {
+      "ema_diff": -0.5521712001221886,
+      "rsi": 96.32536685256711,
+      "vol_ratio": 0.06964389310717033
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T15:01:38.029555"
+  },
+  {
+    "id": null,
+    "token": "SOL",
+    "indicators": {
+      "ema_diff": -0.09225068053075347,
+      "rsi": 44.44799553719248,
+      "vol_ratio": 0.018126539723864514
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T15:02:05.010667"
+  },
+  {
+    "id": null,
+    "token": "ETH",
+    "indicators": {
+      "ema_diff": -2.4271676328994545,
+      "rsi": 64.6729735780703,
+      "vol_ratio": 0.09234380026370241
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T15:02:26.783958"
+  },
+  {
+    "id": null,
+    "token": "BNB",
+    "indicators": {
+      "ema_diff": -0.07082335689995034,
+      "rsi": 63.84282752445307,
+      "vol_ratio": 0.11182948053799668
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T16:01:24.409106"
+  },
+  {
+    "id": null,
+    "token": "SOL",
+    "indicators": {
+      "ema_diff": -0.07891077933162194,
+      "rsi": 53.45558116194077,
+      "vol_ratio": 0.24367382336392865
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T16:02:05.768140"
+  },
+  {
+    "id": null,
+    "token": "ETH",
+    "indicators": {
+      "ema_diff": -1.2963198212655698,
+      "rsi": 78.06073332047144,
+      "vol_ratio": 0.08119471617946786
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T16:02:52.142102"
+  },
+  {
+    "id": null,
+    "token": "BNB",
+    "indicators": {
+      "ema_diff": 0.4178840042068259,
+      "rsi": 89.61234152780212,
+      "vol_ratio": 0.07024445621490986
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T16:31:14.850750"
+  },
+  {
+    "id": null,
+    "token": "SOL",
+    "indicators": {
+      "ema_diff": -0.06313268319274812,
+      "rsi": 63.29379370800902,
+      "vol_ratio": 0.06313390685780865
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T16:31:23.416043"
+  },
+  {
+    "id": null,
+    "token": "ETH",
+    "indicators": {
+      "ema_diff": -0.31904782965511913,
+      "rsi": 87.60492232063217,
+      "vol_ratio": 0.09133323499661981
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T16:31:51.427365"
+  },
+  {
+    "id": null,
+    "token": "BNB",
+    "indicators": {
+      "ema_diff": 0.4096299851968297,
+      "rsi": 89.46531860177781,
+      "vol_ratio": 0.03685566304346532
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T16:46:24.137654"
+  },
+  {
+    "id": null,
+    "token": "SOL",
+    "indicators": {
+      "ema_diff": -0.07117371033730535,
+      "rsi": 57.72489561971031,
+      "vol_ratio": 0.05361263054190669
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T16:46:56.021286"
+  },
+  {
+    "id": null,
+    "token": "ETH",
+    "indicators": {
+      "ema_diff": -0.357544746282656,
+      "rsi": 82.12656575581664,
+      "vol_ratio": 0.039470035795507105
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T16:47:25.302698"
+  },
+  {
+    "id": null,
+    "token": "BNB",
+    "indicators": {
+      "ema_diff": 0.5074168068357494,
+      "rsi": 85.77125848963934,
+      "vol_ratio": 0.03341499033495481
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T17:01:26.909497"
+  },
+  {
+    "id": null,
+    "token": "SOL",
+    "indicators": {
+      "ema_diff": -0.08459299261205899,
+      "rsi": 22.392695121708574,
+      "vol_ratio": 0.08269464809788662
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T17:02:00.585201"
+  },
+  {
+    "id": null,
+    "token": "ETH",
+    "indicators": {
+      "ema_diff": -0.1316890322736981,
+      "rsi": 76.38568699031225,
+      "vol_ratio": 0.07566807323762101
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T17:02:54.831496"
+  },
+  {
+    "id": null,
+    "token": "BNB",
+    "indicators": {
+      "ema_diff": 0.09676537237339744,
+      "rsi": 38.18605048614768,
+      "vol_ratio": 0.03788140932133987
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T17:16:47.077231"
+  },
+  {
+    "id": null,
+    "token": "SOL",
+    "indicators": {
+      "ema_diff": -0.11580046549539702,
+      "rsi": 12.217871551177847,
+      "vol_ratio": 0.0737762265894751
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T17:17:11.857070"
+  },
+  {
+    "id": null,
+    "token": "ETH",
+    "indicators": {
+      "ema_diff": -0.9709328635340171,
+      "rsi": 34.26342023645939,
+      "vol_ratio": 0.06887457269350442
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T17:17:37.761454"
+  },
+  {
+    "id": null,
+    "token": "BNB",
+    "indicators": {
+      "ema_diff": -0.12017878667813875,
+      "rsi": 6.066385923554863,
+      "vol_ratio": 0.12006285391979996
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T17:32:02.790649"
+  },
+  {
+    "id": null,
+    "token": "SOL",
+    "indicators": {
+      "ema_diff": -0.1195573445643845,
+      "rsi": 19.03330314973081,
+      "vol_ratio": 0.07978539722170627
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T17:32:22.426257"
+  },
+  {
+    "id": null,
+    "token": "ETH",
+    "indicators": {
+      "ema_diff": -1.1892247454111384,
+      "rsi": 7.656195219401537,
+      "vol_ratio": 0.06531656972359765
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T17:32:44.185630"
+  },
+  {
+    "id": null,
+    "token": "BNB",
+    "indicators": {
+      "ema_diff": -0.23965029560702078,
+      "rsi": 2.3624321664892243,
+      "vol_ratio": 0.11471793604463719
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T17:46:38.819517"
+  },
+  {
+    "id": null,
+    "token": "SOL",
+    "indicators": {
+      "ema_diff": -0.10048041197603652,
+      "rsi": 51.29730072655256,
+      "vol_ratio": 0.07301860811145595
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T17:47:07.526704"
+  },
+  {
+    "id": null,
+    "token": "ETH",
+    "indicators": {
+      "ema_diff": -1.0421885148530237,
+      "rsi": 24.598907607737104,
+      "vol_ratio": 0.20335176877897615
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T17:47:38.545130"
+  },
+  {
+    "id": null,
+    "token": "BNB",
+    "indicators": {
+      "ema_diff": -0.33592875222518614,
+      "rsi": 2.3640753393572203,
+      "vol_ratio": 0.11756419029021405
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T18:01:21.934725"
+  },
+  {
+    "id": null,
+    "token": "SOL",
+    "indicators": {
+      "ema_diff": -0.07815620578399773,
+      "rsi": 80.2087097074334,
+      "vol_ratio": 0.6017928116896678
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T18:01:50.976131"
+  },
+  {
+    "id": null,
+    "token": "ETH",
+    "indicators": {
+      "ema_diff": -1.2705398418979712,
+      "rsi": 25.43958318175418,
+      "vol_ratio": 0.13945283774263043
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T18:02:25.730336"
+  },
+  {
+    "id": null,
+    "token": "BNB",
+    "indicators": {
+      "ema_diff": -0.33461404926129035,
+      "rsi": 6.226304779368284,
+      "vol_ratio": 0.02985930800435292
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T18:16:33.425160"
+  },
+  {
+    "id": null,
+    "token": "SOL",
+    "indicators": {
+      "ema_diff": -0.0717781693285815,
+      "rsi": 80.29904508624219,
+      "vol_ratio": 0.012999457159709672
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T18:17:10.561389"
+  },
+  {
+    "id": null,
+    "token": "ETH",
+    "indicators": {
+      "ema_diff": -1.2261082815830378,
+      "rsi": 21.761359690485907,
+      "vol_ratio": 0.06638803549537707
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T18:17:45.869745"
+  },
+  {
+    "id": null,
+    "token": "BNB",
+    "indicators": {
+      "ema_diff": -0.1417542033123027,
+      "rsi": 35.306007793153796,
+      "vol_ratio": 0.10259986852392683
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T19:01:31.571240"
+  },
+  {
+    "id": null,
+    "token": "SOL",
+    "indicators": {
+      "ema_diff": 0.0373213686425089,
+      "rsi": 99.99999999999999,
+      "vol_ratio": 0.2770521207767418
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T19:01:47.963133"
+  },
+  {
+    "id": null,
+    "token": "ETH",
+    "indicators": {
+      "ema_diff": 0.9616553523878792,
+      "rsi": 95.92343929392726,
+      "vol_ratio": 0.4687201936030934
+    },
+    "prediction": "up",
+    "outcome": "pending",
+    "timestamp": "2026-04-24T19:01:59.577333"
+  }
+]
