@@ -13,12 +13,13 @@ from openai import OpenAI
 from datetime import datetime, timedelta
 
 # --- CONFIGURATION ---
-WALLET_HOME = os.path.expanduser("~/.awp-wallet")
-LOG_FILE = os.path.expanduser("~/predict_daemon.log")
-MEMORY_FILE = os.path.expanduser("~/memory_bank.json")
-LESSONS_FILE = os.path.expanduser("~/global_lessons.txt")
-ATR_HISTORY_FILE = os.path.expanduser("~/atr_history.json")
-API_KEY="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"
+AGENT_HOME = os.environ.get("AGENT_HOME", os.path.expanduser("~/.awp-predict-fresh"))
+WALLET_HOME = os.environ.get("WALLET_HOME", AGENT_HOME)
+LOG_FILE = os.path.join(AGENT_HOME, "predict_daemon.log")
+MEMORY_FILE = os.path.join(AGENT_HOME, "memory_bank.json")
+LESSONS_FILE = os.path.join(AGENT_HOME, "global_lessons.txt")
+ATR_HISTORY_FILE = os.path.join(AGENT_HOME, "atr_history.json")
+API_KEY = os.environ.get("OPENROUTER_API_KEY", "sk-or-unknown")
 client = OpenAI(api_key=API_KEY, base_url="https://openrouter.ai/api/v1")
 MODEL_NAME = "google/gemma-4-31b-it"
 
@@ -36,8 +37,8 @@ def call_cli(command):
         return None
         
     env = os.environ.copy()
-    env["HOME"] = os.path.expanduser("~")
-    env["WALLET_HOME"] = os.path.expanduser("~/.awp-wallet")
+    env["HOME"] = WALLET_HOME
+    env["WALLET_HOME"] = WALLET_HOME
     try:
         if isinstance(command, list):
             cmd_str = " ".join([str(x) for x in command])
@@ -186,13 +187,39 @@ def sync_memory():
 def get_relevant_memories(token, current_indicators):
     with file_lock:
         memory = load_memory()
-    asset_memories = [m for m in memory if m.get("token") == token and m.get("outcome") != "pending"]
-    asset_memories.sort(key=lambda x: x.get("timestamp", ""), reverse=True)
-    recent = asset_memories[:5]
-    if not recent:
-        return "No past relevant cases found in memory."
+    
+    # Filter for completed predictions of the same asset
+    past_cases = [m for m in memory if m.get("token") == token and m.get("outcome") != "pending"]
+    
+    if not past_cases:
+        return "No past relevant cases found in memory for this asset."
+
+    # Similarity search: Find cases with most similar indicators
+    compare_keys = ["rsi", "ema_diff", "stoch_k", "adx"]
+    scored_cases = []
+
+    for m in past_cases:
+        past_ind = m.get("indicators", {})
+        distance = 0
+        count = 0
+        for k in compare_keys:
+            curr_val = current_indicators.get(k)
+            past_val = past_ind.get(k)
+            if curr_val is not None and past_val is not None:
+                distance += abs(float(curr_val) - float(past_val))
+                count += 1
+        
+        final_score = distance / count if count > 0 else float('inf')
+        scored_cases.append((final_score, m))
+
+    # Sort by smallest distance (most similar)
+    scored_cases.sort(key=lambda x: x[0])
+    
+    # Take top 5 most similar
+    similar_cases = [case for score, case in scored_cases[:5]]
+    
     mem_strings = []
-    for m in recent:
+    for m in similar_cases:
         ind = m.get("indicators", {})
         res = "WIN" if m.get("outcome") == "win" else "LOSS"
         mem_strings.append(
@@ -200,7 +227,8 @@ def get_relevant_memories(token, current_indicators):
             f"EMA_Diff: {ind.get('ema_diff', 'N/A')}, RSI: {ind.get('rsi', 'N/A')}, "
             f"Vol_Ratio: {ind.get('vol_ratio', 'N/A')}x"
         )
-    return "\n".join(mem_strings)
+    
+    return "\n".join(mem_strings) if mem_strings else "No similar patterns found in memory.\n"
 
 def check_panic_mode():
     try:
@@ -234,72 +262,151 @@ def fetch_technical_data(token):
         symbol_map = {"BTC": "BTC/USDT", "ETH": "ETH/USDT", "SOL": "SOL/USDT", "BNB": "BNB/USDT"}
         symbol = symbol_map.get(token.upper(), f"{token.upper()}/USDT")
         exchange = ccxt.binance()
+        
+        # --- 15m Data ---
         ohlcv = exchange.fetch_ohlcv(symbol, timeframe='15m', limit=100)
         df = pd.DataFrame(ohlcv, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume'])
         df['timestamp'] = pd.to_datetime(df['timestamp'], unit='ms')
-        df['ema9'] = ta.ema(df['close'], length=9)
-        df['ema21'] = ta.ema(df['close'], length=21)
+        
+        # EMAs
+        df['ema9'] = df['close'].ewm(span=9, adjust=False).mean()
+        df['ema21'] = df['close'].ewm(span=21, adjust=False).mean()
+        df['ema50'] = df['close'].ewm(span=50, adjust=False).mean()
         ema9_val = df['ema9'].iloc[-1]
         ema21_val = df['ema21'].iloc[-1]
-        ema_diff = ema9_val - ema21_val
-        stoch_rsi = ta.stochrsi(df['close'], length=14, rsi_length=14, k=3, d=3)
-        stoch_k = stoch_rsi.iloc[:, 0].iloc[-1] if stoch_rsi is not None else None
-        stoch_d = stoch_rsi.iloc[:, 1].iloc[-1] if stoch_rsi is not None else None
-        bbands = ta.bbands(df['close'], length=20, std=2)
-        bb_upper = bbands.filter(like='BBU').iloc[-1].values[0] if bbands is not None else None
-        bb_mid = bbands.filter(like='BBM').iloc[-1].values[0] if bbands is not None else None
-        bb_lower = bbands.filter(like='BBL').iloc[-1].values[0] if bbands is not None else None
-        vol_ma = df['volume'].rolling(window=20).mean().iloc[-1]
-        curr_vol = df['volume'].iloc[-1]
-        vol_ratio = curr_vol / vol_ma if vol_ma != 0 else 1.0
+        ema50_val = df['ema50'].iloc[-1]
         curr_price = df['close'].iloc[-1]
+        
+        # Volume Spike (2x avg of last 5)
+        curr_vol = df['volume'].iloc[-1]
+        avg_vol_5 = df['volume'].tail(6).iloc[:-1].mean()
+        vol_spike = curr_vol >= (2 * avg_vol_5)
+        
+        # Standard RSI 14
+        delta = df['close'].diff()
+        gain = (delta.where(delta > 0, 0)).rolling(window=14).mean()
+        loss = (-delta.where(delta < 0, 0)).rolling(window=14).mean()
+        rs = gain / loss
+        rsi_val = 100 - (100 / (1 + rs)).iloc[-1]
+        
+        # Stochastic RSI
+        rsi_series = 100 - (100 / (1 + rs))
+        rsi_min = rsi_series.rolling(window=14).min()
+        rsi_max = rsi_series.rolling(window=14).max()
+        stoch_k = (rsi_series - rsi_min) / (rsi_max - rsi_min)
+        stoch_k_val = stoch_k.iloc[-1] * 100 if not pd.isna(stoch_k.iloc[-1]) else None
+        
+        # Bollinger Bands
+        sma20 = df['close'].rolling(window=20).mean()
+        std20 = df['close'].rolling(window=20).std()
+        bb_upper = (sma20 + 2 * std20).iloc[-1]
+        bb_mid = sma20.iloc[-1]
+        bb_lower = (sma20 - 2 * std20).iloc[-1]
+        
+        # DMI & ADX (Using pandas_ta)
+        dmi = df.ta.adx(length=14)
+        adx_val = dmi['ADX_14'].iloc[-1] if dmi is not None else None
+        plus_di = dmi['DMP_14'].iloc[-1] if dmi is not None else None
+        minus_di = dmi['DMN_14'].iloc[-1] if dmi is not None else None
+        
+        # ATR
+        atr_val = df.ta.atr(length=14).iloc[-1] if df.ta.atr(length=14) is not None else None
+        
+        # --- 1H Anchor Trend (MTF) ---
+        ohlcv_1h = exchange.fetch_ohlcv(symbol, timeframe='1h', limit=60)
+        df_1h = pd.DataFrame(ohlcv_1h, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume'])
+        ema50_1h = df_1h['close'].ewm(span=50, adjust=False).mean().iloc[-1]
+        price_1h = df_1h['close'].iloc[-1]
+        trend_1h = "UP" if price_1h > ema50_1h else "DOWN"
+        
+        # 1H DMI for MTF Filtering
+        dmi_1h = df_1h.ta.adx(length=14)
+        plus_di_1h = dmi_1h['DMP_14'].iloc[-1] if dmi_1h is not None else None
+        minus_di_1h = dmi_1h['DMN_14'].iloc[-1] if dmi_1h is not None else None
+        trend_dmi_1h = "UP" if plus_di_1h > minus_di_1h else "DOWN"
+        
+        # 1H RSI for Momentum check
+        delta_1h = df_1h['close'].diff()
+        gain_1h = (delta_1h.where(delta_1h > 0, 0)).rolling(window=14).mean()
+        loss_1h = (-delta_1h.where(delta_1h < 0, 0)).rolling(window=14).mean()
+        rsi_1h = 100 - (100 / (1 + (gain_1h / loss_1h))).iloc[-1]
+        
         data_summary = (
-            f"Price: {curr_price:.2f}\\n"
-            f"EMA 9: {ema9_val:.2f}, EMA 21: {ema21_val:.2f}, Diff: {ema_diff:.2f}\\n"
-            f"Stochastic RSI: K={stoch_k:.2f}, D={stoch_d:.2f}\\n"
-            f"Bollinger Bands: Upper={bb_upper:.2f}, Mid={bb_mid:.2f}, Lower={bb_lower:.2f}\\n"
-            f"Volume Ratio (MA20): {vol_ratio:.2f}x"
+            f"Price: {curr_price:.2f} | MTF Trend (1H): {trend_1h} | DMI 1H: {trend_dmi_1h}\n"
+            f"EMA 9: {ema9_val:.2f}, EMA 21: {ema21_val:.2f}, EMA 50: {ema50_val:.2f}\n"
+            f"RSI: {rsi_val:.2f}, Stoch RSI: {stoch_k_val:.2f}, ADX: {adx_val:.2f}\n"
+            f"DI+: {plus_di:.2f}, DI-: {minus_di:.2f}, ATR: {atr_val:.2f}\n"
+            f"Vol Spike: {'YES' if vol_spike else 'NO'} | Vol Ratio: {curr_vol/df['volume'].rolling(20).mean().iloc[-1]:.2f}x\n"
+            f"BB: Upper={bb_upper:.2f}, Mid={bb_mid:.2f}, Lower={bb_lower:.2f}"
         )
         last_5 = df.tail(5)[['timestamp', 'open', 'high', 'low', 'close', 'volume']].to_string(index=False)
-        return data_summary, last_5, {"ema_diff": ema_diff, "rsi": stoch_k, "vol_ratio": vol_ratio}
+        indicators = {
+            "ema_diff": ema9_val - ema21_val,
+            "rsi": rsi_val,
+            "stoch_k": stoch_k_val,
+            "vol_spike": int(vol_spike),
+            "trend_1h": trend_1h,
+            "price_vs_ema50": curr_price - ema50_val,
+            "adx": adx_val,
+            "plus_di": plus_di,
+            "minus_di": minus_di,
+            "atr": atr_val,
+            "trend_dmi_1h": trend_dmi_1h,
+            "rsi_1h": rsi_1h
+        }
+        return data_summary, last_5, indicators
+    except Exception as e:
+        log(f"CCXT Data Error for {token}: {e}")
+        return None, None, None
     except Exception as e:
         log(f"CCXT Data Error for {token}: {e}")
         return None, None, None
 
+
 def get_prediction_and_reasoning(market_id, context_data, challenge_prompt, tech_summary, klines_text, indicators, memories, regime):
     token = market_id.split('-')[0].upper()
     global_lessons = load_global_lessons()
-    system_prompt = (
-        f"You are a Quantitative Trading Analyst expert for AWP Predict WorkNet. "
-        f"CURRENT MARKET REGIME: {regime}. "
-        "You MUST use a strictly data-driven approach. Avoid subjective terms.\\n\\n"
-        "REGIME GUIDELINES:\\n"
-        "- If BULL: Focus on finding UP signals, be less afraid of minor corrections.\\n"
-        "- If BEAR: Be extremely cautious. ONLY seek DOWN signals. NEVER predict UP in a BEAR regime.\\n"
-        "- If UNKNOWN: Use standard neutral quantitative analysis.\\n\\n"
-        "You MUST output your response in the following format: \\n"
-        "DIRECTION: [UP or DOWN]\\n"
-        "REASONING: [Your quantitative analysis here]\\n"
-        "Challenge: [Your numeric answer to the challenge]\\n\\n"
-        "CRITICAL REQUIREMENTS:\\n"
-        "1. Reasoning MUST be at least 300 characters.\\n"
-        "2. Formatting: Divide reasoning into these exact sections:\\n"
-        "   1. Analisis Trend: (Numerical comparison of EMAs and price position)\\n"
-        "   2. Analisis Momentum: (Exact Stoch RSI values and their relation to 20/80 levels)\\n"
-        "   3. Analisis Volatilitas: (Bollinger Band positions and Volume Ratio analysis)\\n"
-        "   4. Evaluasi Memory: (How you adjusted your la decision based on past similar cases provided)\\n"
-        "   5. Kesimpulan Kuantitatif: (Calculation of probability and final direction)\\n"
-        "3. Use the provided technical indicators as the absolute source of truth.\\n"
-        "4. MUST learn from the 'Past Similar Scenarios' and 'Global Lessons' provided in the user prompt to avoid repeating mistakes.\\n"
-        "5. The 'Challenge: <number>' line MUST be the very last line of your response."
-    )
+    
+    system_prompt = f"""You are a Quantitative Trading Analyst expert for AWP Predict WorkNet. 
+CURRENT MARKET REGIME: {regime}. 
+You MUST use a strictly data-driven approach. Avoid subjective terms.
+
+STRATEGY GUIDELINES (15m Crypto):
+1. MTF Filter: If MTF Trend (1H) is UP, prioritize UP. If DOWN, prioritize DOWN. Never fight the 1H trend.
+2. Momentum + Retest: Look for Volume Spikes and RSI (60-75 for LONG). Do not chase breakouts; prefer entry on a retest of the breakout level.
+3. EMA 50 Pullback: Price touching/approaching EMA 50 with RSI returning to 50 (neutral) is a high-probability entry signal.
+4. Volume: A Volume Spike (YES) indicates strong institutional interest.
+
+REGIME GUIDELINES:
+- If BULL: Focus on finding UP signals, be less afraid of minor corrections.
+- If BEAR: Be extremely cautious. ONLY seek DOWN signals. NEVER predict UP in a BEAR regime.
+- If UNKNOWN: Use standard neutral quantitative analysis.
+
+You MUST output your response in the following format: 
+DIRECTION: [UP or DOWN]
+REASONING: [Your quantitative analysis here]
+Challenge: [Your numeric answer to the challenge]
+
+CRITICAL REQUIREMENTS:
+1. Reasoning MUST be at least 300 characters.
+2. Formatting: Divide reasoning into these exact sections:
+   1. Analisis Trend (MTF): (1H Trend vs 15m EMA 9/21/50 position)
+   2. Analisis Momentum: (RSI, Stoch RSI, and Volume Spike detection)
+   3. Analisis Volatilitas: (Bollinger Band positions and Vol Ratio)
+   4. Evaluasi Strategy: (Check for Retest or EMA 50 Pullback patterns)
+   5. Evaluasi Memory: (How you adjusted based on past similar cases provided)
+   6. Kesimpulan Kuantitatif: (Final probability calculation and direction)
+3. Use the provided technical indicators as the absolute source of truth.
+4. MUST learn from the 'Past Similar Scenarios' and 'Global Lessons' to avoid repeating mistakes.
+5. The 'Challenge: <number>' line MUST be the very last line of your response. DO NOT output any CLI flags (like --challenge) or commands in your response."""
+
     user_prompt = (
-        f"Market: {market_id}\\n"
-        f"Context: {context_data}\\n"
-        f"--- GLOBAL STRATEGY GUIDELINES (Lessons Learned) ---\\n{global_lessons}\\n\\n"
-        f"--- TECHNICAL INDICATORS (15m) ---\\n{tech_summary}\\n\\n"
-        f"--- PAST SIMILAR SCENARIOS (Memory Bank) ---\\n{memories}\\n\\n"
-        f"--- RAW KLINE DATA (Last 5) ---\\n{klines_text}\\n\\n"
+        f"Market: {market_id}\n"
+        f"Context: {context_data}\n"
+        f"--- GLOBAL STRATEGY GUIDELINES (Lessons Learned) ---\n{global_lessons}\n\n"
+        f"--- TECHNICAL INDICATORS (15m + 1H MTF) ---\n{tech_summary}\n\n"
+        f"--- PAST SIMILAR SCENARIOS (Memory Bank) ---\n{memories}\n\n"
+        f"--- RAW KLINE DATA (Last 5) ---\n{klines_text}\n\n"
         f"Challenge Prompt: {challenge_prompt}"
     )
     try:
@@ -309,16 +416,24 @@ def get_prediction_and_reasoning(market_id, context_data, challenge_prompt, tech
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": user_prompt}
             ],
-            temperature=0.2
+            temperature=0.2,
+            max_tokens=200000
         )
         content = response.choices[0].message.content
-        dir_match = re.search(r"DIRECTION:\\s*(UP|DOWN)", content, re.IGNORECASE)
+        dir_match = re.search(r"DIRECTION:\s*(UP|DOWN)", content, re.IGNORECASE)
         direction = dir_match.group(1).lower() if dir_match else "up"
+        
         reasoning = content.split("REASONING:", 1)[1].strip() if "REASONING:" in content else content
-        return direction, reasoning
+        challenge_match = re.search(r"Challenge:\s*(\d+)", content, re.IGNORECASE)
+        challenge_answer = challenge_match.group(1) if challenge_match else None
+        
+        return direction, reasoning, challenge_answer
     except Exception as e:
         log(f"LLM Error: {e}")
-        return None, None
+        return None, None, None
+
+
+
 
 def process_single_market(market, context_out, regime):
     m_id = market['id']
@@ -347,9 +462,9 @@ def process_single_market(market, context_out, regime):
         return False
     
     memories = get_relevant_memories(token, indicators)
-    direction, reasoning = get_prediction_and_reasoning(m_id, context_out, prompt, tech_summary, klines_text, indicators, memories, regime)
-    if not direction or not reasoning: 
-        log(f"LLM failed to provide prediction for {m_id}")
+    direction, reasoning, challenge_answer = get_prediction_and_reasoning(m_id, context_out, prompt, tech_summary, klines_text, indicators, memories, regime)
+    if not direction or not reasoning or not challenge_answer: 
+        log(f"LLM failed to provide prediction or challenge answer for {m_id}")
         return False
 
     with file_lock:
@@ -369,27 +484,43 @@ def process_single_market(market, context_out, regime):
         "--market", m_id, 
         "--prediction", direction, 
         "--tickets", "1000", 
-        "--reasoning", reasoning.replace('\n', ' ').replace('"', "'").strip(), 
+        "--reasoning", re.sub(r'--challenge\s*\d+', '', reasoning).replace('\n', ' ').replace('"', "'").strip(), 
         "--challenge-nonce", nonce
     ]
     submit_out = call_cli(submit_cmd)
-    if submit_out and '"ok": true' in submit_out.lower():
-        with file_lock:
-            memory = load_memory()
-            try:
-                id_match = re.search(r'"id":\s*(\d+)', submit_out)
-                if id_match and memory:
-                    for entry in reversed(memory):
-                        if entry.get("token") == token and entry.get("outcome") == "pending":
-                            entry["id"] = int(id_match.group(1))
-                            break
-                    save_memory(memory)
-            except:
-                pass
-        log(f"Successfully submitted {m_id} ({direction})!")
-        return True
-    else:
-        log(f"Submit failed for {m_id}: {submit_out}")
+    if not submit_out:
+        log(f"Submit failed for {m_id}: No output from CLI")
+        return False
+        
+    try:
+        # Extract JSON from output
+        start_idx = submit_out.find('{')
+        end_idx = submit_out.rfind('}') + 1
+        if start_idx == -1:
+            log(f"Submit failed for {m_id}: No JSON in output")
+            return False
+            
+        res_data = json.loads(submit_out[start_idx:end_idx])
+        if res_data.get("ok") is True:
+            with file_lock:
+                memory = load_memory()
+                try:
+                    id_match = re.search(r'"id":\s*(\d+)', submit_out)
+                    if id_match and memory:
+                        for entry in reversed(memory):
+                            if entry.get("token") == token and entry.get("outcome") == "pending":
+                                entry["id"] = int(id_match.group(1))
+                                break
+                        save_memory(memory)
+                except:
+                    pass
+            log(f"Successfully submitted {m_id} ({direction})!")
+            return True
+        else:
+            log(f"Submit failed for {m_id}: {res_data.get('user_message', 'Unknown error')}")
+            return False
+    except Exception as e:
+        log(f"Submit JSON Parse Error for {m_id}: {e}. Raw output: {submit_out}")
         return False
 
 
