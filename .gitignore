@@ -1,0 +1,19 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environment
+.venv/
+venv/
+ENV/
+
+# Logs
+*.log
+
+# State and Memory files (Do not upload secrets or local state)
+*.json
+
+# OS files
+.DS_Store
+Thumbs.db
