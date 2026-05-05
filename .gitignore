@@ -17,3 +17,19 @@ ENV/
 # OS files
 .DS_Store
 Thumbs.db
+
+# ML Models
+ml_models/
+
+# Backtest data cache
+backtest/data/
+
+# Runtime files
+*.log
+predict_daemon.log
+strategic_plan.json
+memory_bank.json
+daily_reports.txt
+
+# Backtest cache
+backtest/cache/
